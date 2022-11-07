@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>ToxVent</defName>
+		<label>tox vent</label>
+		<description>A vent connected to cannisters of pressurized liquid gas.\n\nThe cannisters must be refilled with chemfuel from time to time.\n\nWhen active, the gas will slowly fill the room with a toxic compound.\n\nTox gas burns the lungs and eyes, causing a temporary shortness of breath and reduction in sight.\nContinued exposure to tox gas results in toxic buildup which can be lethal.</description>
+		<designationCategory>Misc</designationCategory>
+		<graphicData>
+			<texPath>Things/Building/Misc/ToxicVent</texPath>
+			<graphicClass>Graphic_Multi</graphicClass>
+			<damageData>
+				<cornerTL>Damage/Corner</cornerTL>
+				<cornerTR>Damage/Corner</cornerTR>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
+			</damageData>
+		</graphicData>
+		<altitudeLayer>BuildingOnTop</altitudeLayer>
+		<passability>PassThroughOnly</passability>
+		<blockWind>true</blockWind>
+		<fillPercent>.6</fillPercent>
+		<coversFloor>false</coversFloor>
+		<blockLight>false</blockLight>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+		<building>
+			<canPlaceOverWall>false</canPlaceOverWall>
+			<isEdifice>false</isEdifice>
+		</building>
+		<placeWorkers>
+			<li>ToxVent.ToxVentPlaceWorker</li>
+		</placeWorkers>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<statBases>
+			<WorkToBuild>400</WorkToBuild>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Flammability>1.0</Flammability>
+		</statBases>
+		<tickerType>Normal</tickerType>
+		<costList>
+			<Steel>30</Steel>
+			<ComponentIndustrial>1</ComponentIndustrial>
+		</costList>
+		<researchPrerequisites>
+			<li>ToxGas</li>
+		</researchPrerequisites>
+		<comps>
+			<li Class="CompProperties_Flickable">
+				<commandTexture>UI/Commands/Vent</commandTexture>
+				<commandLabelKey>CommandDesignateOpenCloseVentLabel</commandLabelKey>
+				<commandDescKey>CommandDesignateOpenCloseVentDesc</commandDescKey>
+			</li>
+			<li Class="CompProperties_Refuelable">
+				<fuelCapacity>50.0</fuelCapacity>
+				<initialConfigurableTargetFuelLevel>10</initialConfigurableTargetFuelLevel>
+				<fuelFilter>
+					<thingDefs>
+						<li>Chemfuel</li>
+					</thingDefs>
+				</fuelFilter>
+				<consumeFuelOnlyWhenUsed>true</consumeFuelOnlyWhenUsed>
+				<autoRefuelPercent>10</autoRefuelPercent>
+				<showFuelGizmo>true</showFuelGizmo>
+				<drawOutOfFuelOverlay>false</drawOutOfFuelOverlay>
+				<drawFuelGaugeInMap>true</drawFuelGaugeInMap>
+				<showAllowAutoRefuelToggle>true</showAllowAutoRefuelToggle>
+			</li>
+			<li Class="ToxVent.ToxVentComp_Properties">
+				<ToxPourTime>5</ToxPourTime>
+				<ToxPourValue>255</ToxPourValue>
+				<FuelConsumption>1</FuelConsumption>
+			</li>
+		</comps>
+	</ThingDef>
+
+</Defs>

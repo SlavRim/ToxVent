@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Tox Vent</name>
+	<author>Sl4vP0weR</author>
+	<packageId>Sl4vP0weR.ToxVent</packageId>
+	<supportedVersions>
+		<li>1.4</li>
+	</supportedVersions>
+	<description>A vent that producing toxic gas.</description>
+</ModMetaData>
