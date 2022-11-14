@@ -17,7 +17,7 @@
 			</damageData>
 		</graphicData>
 		<altitudeLayer>BuildingOnTop</altitudeLayer>
-		<passability>PassThroughOnly</passability>
+		<passability>Impassable</passability>
 		<blockWind>true</blockWind>
 		<fillPercent>.6</fillPercent>
 		<coversFloor>false</coversFloor>
